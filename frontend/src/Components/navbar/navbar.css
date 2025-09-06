@@ -1,0 +1,93 @@
+/* Container principal do menu lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Esconde o menu fora da tela */
+  width: 300px;
+  height: 100vh;
+  background-color: #0f0f1a;
+  color: #ffffffff;
+  transition: right 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  z-index: 2000;
+}
+
+/* Estilos para o botão do menu (hambúrguer) */
+.menu-toggle {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  
+  /* Posicionamento e visibilidade */
+  position: fixed; /* Fixa o ícone na tela */
+  top: 1rem;       /* 16px a partir do topo */
+  right: 1rem;      /* 16px a partir da direita */
+  z-index: 3000;   /* Garante que o ícone fique na frente de outros elementos */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffffff; /* Cor das barras do ícone */
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar.open {
+  right: 0; /* Desliza o menu para a tela */
+}
+
+/* Cabeçalho do menu */
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #0f0f1a;
+  border-bottom: 1px solid #0f0f1a;
+}
+
+.close-btn {
+  font-size: 2rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+/* Itens da lista */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  border-bottom: 1px solid #0f0f1a;
+  cursor: pointer;
+}
+
+.item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Ícone de seta */
+.arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow.open {
+  transform: rotate(90deg); /* Gira a seta quando o submenu está aberto */
+}
+
+/* Estilo do submenu */
+.submenu {
+  list-style: none;
+  padding: 0;
+  background-color: #0f0f1a;
+}
+
+.submenu li {
+  padding: 0.8rem 2rem;
+  border-bottom: 1px solid #0f0f1a;
+}
